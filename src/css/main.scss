@@ -119,16 +119,12 @@ html {
     color: #1abc9c; /* A nice teal for hover */
 }
 
-/* Offset page content to prevent it from being hidden by the fixed header */
-main {
-    padding-top: 95px; /* Adjust this value to match your initial header height */
-}
-
 /* Section-specific styling for visual separation */
 #home {
     background-color: #f0f8ff; /* AliceBlue */
     /* This is the key: make the section fill the viewport MINUS the header height */
-    min-height: calc(100vh - 95px);
+    min-height: 100vh;
+    padding-top: 95px;
 }
 
 #about {
