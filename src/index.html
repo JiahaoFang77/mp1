@@ -1,13 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Single-Page Website</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/main.scss">
+</head>
+<body>
+
+    <header id="header">
+        <nav id="navbar" class="content-container">
+            <a href="#home" class="nav-logo">MyWebsite</a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#video-promo">Video Promo</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="full-width-section">
+            <div class="content-container">
+                <h1>Jiahao Fang</h1>
+                <p>A passionate developer creating modern web experiences.</p>
+                <div class="icon-showcase">
+                    <div class="showcase-icon-wrapper"><i class="fa-brands fa-html5"></i></div>
+                    <div class="showcase-icon-wrapper"><i class="fa-brands fa-css3-alt"></i></div>
+                    <div class="showcase-icon-wrapper"><i class="fa-brands fa-js-square"></i></div>
+                    <div class="showcase-icon-wrapper"><i class="fa-brands fa-python"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="full-width-section">
+            <div class="content-container">
+                <h2>About</h2>
+                <p class="section-intro">I specialize in creating modern, responsive websites.</p>
+                <div class="multi-column-container">
+                    <div class="column">
+                        <h3><i class="icon-placeholder"></i> Strategy</h3>
+                        <p>I begin every project by understanding the core business goals, defining the target audience, and mapping out a clear strategy for success.</p>
+                    </div>
+                    <div class="column">
+                        <h3><i class="icon-placeholder"></i> Design</h3>
+                        <p>With a focus on clean aesthetics and user experience, I design intuitive interfaces that are both beautiful and easy to navigate.</p>
+                    </div>
+                    <div class="column">
+                        <h3><i class="icon-placeholder"></i> Development</h3>
+                        <p>I bring designs to life with clean, efficient code, ensuring a fast, reliable, and accessible experience for all users across all devices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="full-width-section">
+            <div class="content-container">
+                <h2>Portfolio</h2>
+                <p>Here's a showcase of my work.</p>
+                <div class="carousel">
+                    <div class="carousel-slides">
+                        <div class="carousel-slide project-slide" style="background-color: #1abc9c;">
+                            <div class="slide-content">
+                                <i class="fas fa-mobile-screen-button"></i>
+                                <h3>Mobile App</h3>
+                                <p>Designed and developed a cross-platform productivity application for iOS and Android.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide project-slide" style="background-color: #3498db;">
+                            <div class="slide-content">
+                                <i class="fas fa-chart-line"></i>
+                                <h3>Data Dashboard</h3>
+                                <p>Built a real-time data visualization dashboard for a financial services client using Python and D3.js.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide project-slide" style="background-color: #9b59b6;">
+                            <div class="slide-content">
+                                <i class="fas fa-store"></i>
+                                <h3>E-Commerce Site</h3>
+                                <p>Created a full-stack e-commerce platform with a custom payment gateway integration.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev-btn" aria-label="Previous Slide">&#10094;</button>
+                    <button class="carousel-btn next-btn" aria-label="Next Slide">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="video-promo" class="full-width-section">
+            <div class="content-container">
+                <h2>See Our Process</h2>
+                <p>Watch this short video to learn more about how we work.</p>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_30MB.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section id="background" class="full-width-section">
+            <div class="parallax-content">
+                <h2>Background Image</h2>
+                <p>This is a section which uses a fixed-position background image</p>
+            </div>
+        </section>
+
+        <section id="contact" class="full-width-section">
+            <div class="content-container">
+                <h2>Contact Section</h2>
+                <button id="open-modal-btn" class="cta-button">Show Details</button>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="full-width-section">
+        <div class="content-container">
+            <div class="social-media-links">
+                <a href="https://github.com" target="_blank" class="social-icon" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Twitter Profile"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2025 Jiahao Fang</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+
+    <div id="modal-overlay">
+        <div id="modal">
+            <button id="close-modal-btn" aria-label="Close modal">&times;</button>
+            <h3>Additional Information</h3>
+            <p>This is a modal window. You can use it to display terms of service, a larger image, a contact form, or any other supplementary content.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        </div>
+    </div>
+
+</body>
 </html>

@@ -1,1 +1,462 @@
-/* Your SCSS here. */
+/* Global Resets and Variables */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+/* Style for the active navigation link */
+#navbar ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px; /* Initial larger link font size */
+    font-weight: 500;
+    padding: 8px 15px; /* Add padding to create the button shape */
+    border-radius: 5px; /* Round the corners of the frame */
+    /* Update transition to animate the background color smoothly */
+    transition: font-size 0.3s ease-in-out, color 0.2s, background-color 0.3s;
+}
+
+#header.scrolled #navbar ul li a {
+    font-size: 16px; /* Smaller link font size */
+}
+
+/* Hover for non-active links: a subtle background highlight */
+#navbar ul li a:hover {
+    background-color: #34495e;
+}
+
+/* Style for the active navigation link (the frame) */
+#navbar ul li a.active {
+    background-color: #1d2b38; /* A darker background to create the frame */
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Optional: a slightly brighter frame when hovering over the active link */
+#navbar ul li a.active:hover {
+    background-color: #2c3e50;
+}
+
+/* Layout Styling */
+.full-width-section {
+    width: 100%;
+    min-height: 80vh; /* Set a minimum height for visibility */
+    display: flex;
+    justify-content: center; /* Horizontally centers the content-container */
+    align-items: center; /* Vertically centers the content-container */
+    padding: 60px 20px;
+}
+
+.content-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center; /* Horizontally centers the text inside the container */
+}
+
+/* Header and Navigation Bar */
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #2c3e50;
+    transition: padding 0.3s ease-in-out;
+    padding: 25px 0; /* Initial larger padding */
+}
+
+#header.scrolled {
+    padding: 10px 0; /* Smaller padding when scrolled */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 24px; /* Initial larger font size */
+    font-weight: bold;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: font-size 0.3s ease-in-out;
+}
+
+#header.scrolled .nav-logo {
+    font-size: 20px; /* Smaller font size */
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar ul li {
+    margin-left: 25px;
+}
+
+#navbar ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px; /* Initial larger link font size */
+    font-weight: 500;
+    transition: font-size 0.3s ease-in-out, color 0.2s;
+}
+
+#header.scrolled #navbar ul li a {
+    font-size: 16px; /* Smaller link font size */
+}
+
+#navbar ul li a:hover {
+    color: #1abc9c; /* A nice teal for hover */
+}
+
+/* Offset page content to prevent it from being hidden by the fixed header */
+main {
+    padding-top: 95px; /* Adjust this value to match your initial header height */
+}
+
+/* Remove the min-height from the #home section since the padding-top handles the initial view */
+#home {
+    min-height: calc(100vh - 95px);
+}
+
+/* Section-specific styling for visual separation */
+#home {
+    background-color: #f0f8ff; /* AliceBlue */
+    min-height: 100vh;
+}
+
+#about {
+    background-color: #faebd7; /* AntiqueWhite */
+}
+
+#portfolio {
+    background-color: #f5f5dc; /* Beige */
+}
+
+#parallax-divider {
+    background-color: #f5f5dc; /* Beige */
+}
+
+#background {
+    background-color: #fffacd; /* LemonChiffon */
+}
+
+#footer {
+    background-color: #2c3e50; /* Dark Slate Gray */
+    color: #ecf0f1; /* Cloud White */
+    min-height: 20vh;
+}
+
+/* Carousel Section Styling */
+#portfolio p {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.carousel {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel:hover {
+    transform: scale(1.02); /* Makes the carousel 2% larger */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25); /* Enhances the shadow */
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block; /* Removes bottom space under the image */
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 20px;
+    z-index: 100;
+    transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: 10px;
+    border-radius: 5px 0 0 5px;
+}
+
+.next-btn {
+    right: 10px;
+    border-radius: 0 5px 5px 0;
+}
+
+/* Multi-column Layout Styling */
+#about .section-intro {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1em;
+}
+
+.multi-column-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Creates space between the columns */
+    text-align: left; /* Aligns text to the left within each column */
+}
+
+.column {
+    flex: 1; /* Allows each column to grow and take up equal space */
+    transition: transform 0.3s ease;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.column h3 {
+    color: #1abc9c;
+    margin-bottom: 15px;
+}
+
+.column:hover {
+    transform: translateY(-8px); /* Lifts the column up by 8 pixels */
+}
+
+#background {
+    /* A placeholder image from unsplash.com */
+    background-image: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1740&auto=format&fit=crop");
+    
+    /* You can adjust the height of this divider section */
+    min-height: 40vh;
+
+    /* These four properties create the parallax effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-content {
+    background: rgba(44, 62, 80, 0.7); /* Semi-transparent dark background for text readability */
+    padding: 20px 40px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+}
+
+.parallax-content h2 {
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Call-to-Action Button Style (for modal trigger) */
+.cta-button {
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #16a085;
+    transform: translateY(-3px); /* Lifts the button */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Adds a subtle shadow */
+}
+
+/* Modal Styling */
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+
+    /* Center the modal using flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Animation: Hide by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+#modal-overlay.active {
+    /* Animation: Show when active */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+#modal {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    position: relative; /* Needed for the close button */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+#modal h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+#close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Embedded Video Section Styling */
+#video-promo {
+    background-color: #ecf0f1; /* A light, neutral background */
+}
+
+#video-promo p {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.video-wrapper {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden; /* This makes the video corners conform to the border-radius */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    background-color: #000; /* Black background for a cinematic feel */
+}
+
+video {
+    width: 100%; /* Makes the video responsive */
+    display: block; /* Removes any unwanted space below the video */
+}
+
+/* Home Section - Icon Showcase */
+.icon-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.showcase-icon-wrapper {
+    font-size: 32px;
+    color: #fff;
+    background-color: rgba(44, 62, 80, 0.8);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.showcase-icon-wrapper:hover {
+    transform: scale(1.15) rotate(10deg);
+    background-color: #1abc9c;
+}
+
+/* Footer - Social Media Icons */
+.social-media-links {
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    color: #ecf0f1;
+    font-size: 24px;
+    margin: 0 15px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+    color: #1abc9c;
+    transform: translateY(-5px);
+}
+
+/* Portfolio Carousel - Slide Content Styling */
+.project-slide {
+    min-height: 450px;
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-content {
+    text-align: center;
+}
+
+.slide-content i {
+    font-size: 72px;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.slide-content h3 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+.slide-content p {
+    font-size: 1.1em;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* We remove the old rule for images just in case */
+.carousel-slide img {
+    display: none;
+}
