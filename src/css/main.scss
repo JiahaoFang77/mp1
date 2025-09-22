@@ -53,7 +53,6 @@ html {
 }
 
 .content-container {
-    max-width: 1200px;
     width: 100%;
     text-align: center; /* Horizontally centers the text inside the container */
 }
@@ -78,6 +77,14 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 15px;
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-logo {
@@ -92,15 +99,8 @@ html {
     font-size: 20px; /* Smaller font size */
 }
 
-#navbar ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
 #navbar ul li {
-    margin-left: 25px;
+    box-align: "right";
 }
 
 #navbar ul li a {
@@ -124,19 +124,16 @@ main {
     padding-top: 95px; /* Adjust this value to match your initial header height */
 }
 
-/* Remove the min-height from the #home section since the padding-top handles the initial view */
-#home {
-    min-height: calc(100vh - 95px);
-}
-
 /* Section-specific styling for visual separation */
 #home {
     background-color: #f0f8ff; /* AliceBlue */
-    min-height: 100vh;
+    /* This is the key: make the section fill the viewport MINUS the header height */
+    min-height: calc(100vh - 95px);
 }
 
 #about {
     background-color: #faebd7; /* AntiqueWhite */
+    padding: 0 20%;
 }
 
 #portfolio {
@@ -223,7 +220,7 @@ main {
 
 /* Multi-column Layout Styling */
 #about .section-intro {
-    max-width: 600px;
+    width: 100%;
     margin: 0 auto 40px auto;
     font-size: 1.1em;
 }
@@ -258,7 +255,7 @@ main {
     background-image: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1740&auto=format&fit=crop");
     
     /* You can adjust the height of this divider section */
-    min-height: 40vh;
+    min-height: 80vh;
 
     /* These four properties create the parallax effect */
     background-attachment: fixed;
@@ -460,3 +457,4 @@ video {
 .carousel-slide img {
     display: none;
 }
+
