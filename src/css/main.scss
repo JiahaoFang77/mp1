@@ -226,6 +226,7 @@ html {
     text-align: left;
     max-width: 75rem;
     margin: 0 auto;
+    margin-top: 2rem;
 }
 
 .column {
@@ -418,6 +419,16 @@ video {
     align-items: center;
 }
 
+.slide-1 {
+    background-color: #1abc9c;
+}
+.slide-2 {
+    background-color: #3498db;
+}
+.slide-3 {
+    background-color: #9b59b6;
+}
+
 .slide-content {
     text-align: center;
 }
@@ -473,8 +484,5 @@ video {
   }
   #about {
     padding: 2.5rem 5%;
-  }
-  #background {
-    background-attachment: scroll;
   }
 }
